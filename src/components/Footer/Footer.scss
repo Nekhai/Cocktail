@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  height: 100px;
+  width: 100%;
+  background: #161b22;
+  &__title {
+    padding: 15px 0 10px;
+    text-align: center;
+    font-size: 20px;
+    color: $color-text;
+  }
+  &__alfabet {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  &__link {
+    padding: 5px;
+    button {
+      border: none;
+      background: none;
+      color: $color-text;
+      font-size: 24px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        opacity: 0.5;
+        transition: 0.5;
+      }
+    }
+  }
+}
