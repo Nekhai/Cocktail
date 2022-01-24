@@ -3,8 +3,10 @@ import { Content } from "../components/Content/Content";
 import { Header } from "../components/Header/Header";
 import { Footer } from "../components/Footer/Footer";
 
+export const ShoppingCart = React.createContext([]);
+
 export const useFetch = (url) => {
-  const [fetchData, setFetchData] = useState([]);
+  const [fetchData, setFetchData] = useState(null);
 
   useEffect(() => {
     const fetchCocktails = async (url) => {
@@ -19,11 +21,15 @@ export const useFetch = (url) => {
 };
 
 export const App = () => {
+  const [cart, setCart] = useState([]);
+
   return (
-    <div className="app">
-      <Header />
-      <Content />
-      <Footer />
-    </div>
+    <ShoppingCart.Provider value={[cart, setCart]}>
+      <div className="app">
+        <Header />
+        <Content />
+        <Footer />
+      </div>
+    </ShoppingCart.Provider>
   );
 };
