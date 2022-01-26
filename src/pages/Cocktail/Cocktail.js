@@ -37,7 +37,7 @@ export const Cocktail = () => {
   console.log(data);
 
   if (!data) {
-    return <div>loading...</div>;
+    return <div></div>;
   }
 
   return (

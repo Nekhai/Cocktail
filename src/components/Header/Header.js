@@ -1,19 +1,29 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useSearchParams,
+  createSearchParams,
+} from "react-router-dom";
 import "./Header.scss";
 
 export const Header = () => {
-  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigation = useNavigate();
+  const searchParamsValue = searchParams.get("s") || "";
 
   const hanleChange = (e) => {
-    setSearch(e.target.value);
+    e.preventDefault();
+    const s = e.target.value;
+    setSearchParams({ s });
   };
-  const formSubmit = () =>
+  const formSubmit = (e) => {
+    e.preventDefault();
     navigation({
-      pathname: "/cocktail",
-      search: `?s=${search}`,
+      pathname: "/cocktails-list",
+      search: `s=${searchParamsValue}`,
     });
+  };
 
   return (
     <div className="header">
@@ -25,9 +35,9 @@ export const Header = () => {
           <div className="header__search">
             <form onSubmit={formSubmit}>
               <input
-                type="search"
+                type="text"
                 placeholder="Search"
-                value={search}
+                value={searchParamsValue}
                 onChange={hanleChange}
               />
             </form>

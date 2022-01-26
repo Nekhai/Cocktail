@@ -1,6 +1,8 @@
 @import "../../styles/variables.scss";
 
 .home {
+  max-width: 1024px;
+  margin: 0 auto;
   &__title {
     padding: 35px 0;
     text-align: center;

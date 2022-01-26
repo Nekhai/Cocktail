@@ -9,7 +9,7 @@ export const Footer = () => {
 
   const searchLink = (letter) => {
     navigation({
-      pathname: "/cocktail",
+      pathname: "cocktails-list",
       search: `?f=${letter}`,
     });
   };

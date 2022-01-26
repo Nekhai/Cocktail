@@ -15,7 +15,7 @@ export const Home = () => {
   }, [fetchData]);
 
   if (!data) {
-    return <div>loading...</div>;
+    return <div></div>;
   }
 
   return (

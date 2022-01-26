@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "../../pages/Home/Home";
-import { List } from "../../pages/List";
+import { List } from "../../pages/List/List";
 import { Cocktail } from "../../pages/Cocktail/Cocktail";
 import "./Content.scss";
 
