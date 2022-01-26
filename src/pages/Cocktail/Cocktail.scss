@@ -1,0 +1,38 @@
+@import "../../styles/variables.scss";
+
+.cocktail {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto;
+  &__card {
+    width: 60%;
+    padding: 40px 0 0 0;
+  }
+  &__item {
+    width: 100%;
+  }
+  &__instruction {
+    line-height: 30px;
+    h4 {
+      padding: 20px 0 20px 0;
+      font-size: 30px;
+      color: $color-blue;
+      line-height: 10px;
+    }
+  }
+  &__ingredients {
+    display: flex;
+  }
+
+  &__description {
+    width: 40%;
+    padding: 40px 0 0 40px;
+    font-size: 20px;
+  }
+}
+
+.ingredients {
+  &__name {
+    padding: 0 20px 0 0;
+  }
+}
