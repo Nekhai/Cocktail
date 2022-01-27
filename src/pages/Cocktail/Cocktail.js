@@ -53,7 +53,7 @@ export const Cocktail = () => {
               className="cocktail__img"
             />
           }
-          btn={<Button id={data[0].idDrink} />}
+          btn={<Button id={data[0].idDrink} name={data[0].strDrink} />}
         />
       </div>
       <div className="cocktail__description">

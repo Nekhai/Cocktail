@@ -1,0 +1,14 @@
+@import "../styles/variables.scss";
+
+.app-item-cart {
+  display: flex;
+  padding: 10px 0 0 0;
+  &__title {
+    padding: 20px 0 0 20px;
+    font-size: 25px;
+    color: $color-blue;
+  }
+  img {
+    width: 75px;
+  }
+}

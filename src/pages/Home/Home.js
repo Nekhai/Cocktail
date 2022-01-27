@@ -33,7 +33,7 @@ export const Home = () => {
             className="home__img"
           />
         }
-        btn={<Button id={data[0].idDrink} />}
+        btn={<Button id={data[0].idDrink} name={data[0].strDrink} />}
       />
       <p className="home__text">Personal recommendation</p>
     </div>

@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import {
-  Link,
-  useNavigate,
-  useSearchParams,
-  createSearchParams,
-} from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import "./Header.scss";
+import { Modal } from "../modal/Modal";
+import { ShoppingCart } from "../../app/App";
 
 export const Header = () => {
+  const [cart, setCart] = useContext(ShoppingCart);
+  const [isOpen, setOpen] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const navigation = useNavigate();
   const searchParamsValue = searchParams.get("s") || "";
@@ -43,8 +42,23 @@ export const Header = () => {
             </form>
           </div>
           <div className="header__basket">
-            <div className="header__amount"></div>
-            <button className="header__btn">
+            <div
+              className={
+                cart.length === 0
+                  ? "header__hide header__amount"
+                  : "header__amount"
+              }
+            >
+              <p className={"header__number"}>{cart.length}</p>
+            </div>
+            <button
+              className="header__btn"
+              onClick={() =>
+                cart.length === 0
+                  ? alert("First, choose a cocktail")
+                  : setOpen(!isOpen)
+              }
+            >
               <svg
                 enableBackground="new 0 0 48 48"
                 height="42px"
@@ -70,6 +84,7 @@ export const Header = () => {
             </button>
           </div>
         </div>
+        <Modal isOpen={isOpen} close={() => setOpen(false)} />
       </div>
     </div>
   );

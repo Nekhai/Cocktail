@@ -28,7 +28,7 @@ export const List = () => {
     <div className="list">
       {data.map((item) => (
         <AppItem
-          key={item.id}
+          key={item.idDrink}
           className={"list__item"}
           title={item.strDrink}
           img={
